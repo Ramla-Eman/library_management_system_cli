@@ -9,5 +9,5 @@ logs/
 .env
 
 # Data files
-data/users.json
-data/books.json
+./data/users.json
+./data/books.json
