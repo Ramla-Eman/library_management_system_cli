@@ -7,7 +7,7 @@ function addBook(title, author, year) {
   let newBook = { id: books.length + 1, title, author, year, borrowed: false };
   books.push(newBook);
   writeBooks(books);
-  console.log(`✅ Book "${title}" added successfully!`);
+  console.log(`✅ Book "${title}" addet successfully!`);
 }
 
 // remove book function
@@ -21,7 +21,7 @@ function removeBook(bookId) {
   }
 
   writeBooks(updatedBooks);
-  console.log("✅ Book removed successfully!");
+  console.log("✅ Book deleted successfully!");
 }
 
 // update book

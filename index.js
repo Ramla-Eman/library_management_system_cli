@@ -1,7 +1,5 @@
-const readline = require("readline");
 const { signup, readUsers } = require("./js/auth");
-const { listBooks } = require("./js/books");
-const { borrowBook, returnBook, listYourBooks } = require("./js/user");
+const readline = require("readline");
 const {
   addBook,
   removeBook,
@@ -10,7 +8,10 @@ const {
   listUsers,
   deleteUser,
 } = require("./js/admin");
+const { borrowBook, returnBook, listYourBooks } = require("./js/user");
+const { listBooks } = require("./js/books");
 
+// rl complete form read line
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
@@ -49,7 +50,7 @@ function startupMenu() {
               console.log(`✅ ${user.name} logged in Successfully!`);
               mainMenu();
             } else {
-              console.log("❌ Invalid user credentials!");
+              console.log("❌ Invalid user email $ password!");
               startupMenu();
             }
           });
@@ -69,7 +70,7 @@ function startupMenu() {
               console.log(`✅ Admin ${admin.name} logged in!`);
               adminMenu();
             } else {
-              console.log("❌ Invalid admin credentials!");
+              console.log("❌ Invalid admin email 7 password");
               startupMenu();
             }
           });
@@ -80,15 +81,15 @@ function startupMenu() {
         rl.close();
         break;
       default:
-        console.log("⚠️ Invalid option! Try again.");
+        console.log("⚠️ not a option! Try again.");
         startupMenu();
     }
   });
 }
 
-// admin panel
+// admin menu
 function adminMenu() {
-  console.log("\n🛠️ Admin Panel");
+  console.log("\n Admin Panel");
   console.log("1. Add Book");
   console.log("2. Remove Book");
   console.log("3. Update Book");
@@ -97,7 +98,7 @@ function adminMenu() {
   console.log("6. Delete User");
   console.log("7. Exit");
 
-  rl.question("Select an option: ", (option) => {
+  rl.question("Select a option: ", (option) => {
     switch (option) {
       case "1":
         rl.question("Enter book title: ", (title) => {
@@ -110,7 +111,7 @@ function adminMenu() {
         });
         break;
       case "2":
-        rl.question("Enter book ID to remove: ", (bookId) => {
+        rl.question("Enter book ID to delete: ", (bookId) => {
           removeBook(parseInt(bookId));
           adminMenu();
         });
@@ -140,6 +141,7 @@ function adminMenu() {
         break;
       case "4":
         watchBooks();
+        // =================
         adminMenu();
         break;
       case "5":
@@ -153,7 +155,7 @@ function adminMenu() {
         });
         break;
       case "7":
-        console.log("📌 Exiting admin panel.");
+        console.log("Exiting admin panel.");
         mainMenu();
         break;
       default:
@@ -165,7 +167,7 @@ function adminMenu() {
 
 // main menu
 function mainMenu() {
-  console.log("\n📚 Library Management System");
+  console.log("\n Library Management System");
   console.log("1. List Books");
   console.log("2. List Your Books");
   console.log("3. Borrow Book");
@@ -185,7 +187,7 @@ function mainMenu() {
         });
         break;
       case "3":
-        rl.question("Enter your user ID: ", (userId) => {
+        rl.question("Enter your user ID:", (userId) => {
           rl.question("Enter book ID to borrow: ", (bookId) => {
             borrowBook(parseInt(userId), parseInt(bookId));
             mainMenu();
@@ -201,11 +203,11 @@ function mainMenu() {
         });
         break;
       case "5":
-        console.log("📌 Exiting from user panel.");
+        console.log("Exiting from user panel.");
         startupMenu();
         break;
       default:
-        console.log("⚠️ Invalid option! Try again.");
+        console.log("⚠️ not a option! Try again.");
         mainMenu();
     }
   });

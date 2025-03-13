@@ -25,12 +25,12 @@ function returnBook(userId, bookId) {
   let users = readUsers();
   let books = readBooks();
 
-  let user = users.find((u) => u.id === userId);
-  let book = books.find((b) => b.id === bookId);
+  let user = users.find((i) => i.id === userId);
+  let book = books.find((i) => i.id === bookId);
 
   if (!user || !book) return console.log("⚠️ User or book not found!");
 
-  user.borrowedBooks = user.borrowedBooks.filter((b) => b.id !== bookId);
+  user.borrowedBooks = user.borrowedBooks.filter((i) => i.id !== bookId);
   book.borrowed = false;
 
   writeUsers(users);

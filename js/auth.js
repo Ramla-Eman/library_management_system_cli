@@ -45,7 +45,7 @@ function login(email, password) {
   );
 
   if (!user) {
-    console.log("❌ Invalid email or password!");
+    console.log("❌ there's not email or password!");
     return null;
   }
 
