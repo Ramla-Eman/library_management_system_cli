@@ -46,7 +46,7 @@ function startupMenu() {
                 u.role === "user"
             );
             if (user) {
-              console.log("✅ logged in Successfully!");
+              console.log(`✅ ${user.name} logged in Successfully!`);
               mainMenu();
             } else {
               console.log("❌ Invalid user credentials!");
@@ -66,7 +66,7 @@ function startupMenu() {
                 u.role === "admin"
             );
             if (admin) {
-              console.log("✅ Admin logged in!");
+              console.log(`✅ Admin ${admin.name} logged in!`);
               adminMenu();
             } else {
               console.log("❌ Invalid admin credentials!");

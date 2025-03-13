@@ -1,32 +1,33 @@
 [
   {
     "id": 1,
-    "name": "Admin",
-    "email": "admin@library.com",
-    "password": "admin123",
+    "name": "Ramla Eman",
+    "email": "ramla.eman.ra@gmail.com",
+    "password": "ramlaEman",
     "role": "admin",
     "borrowedBooks": []
   },
   {
     "id": 2,
-    "name": "ramla",
-    "email": "ramla.eman.ra@gmail.com",
-    "password": "1234",
+    "name": "Rizwan Ahmed",
+    "email": "razykan.ra@gmail.com",
+    "password": "028981",
+    "role": "admin",
     "borrowedBooks": []
   },
   {
-    "id": 3,
-    "name": "basit",
-    "email": "basit.com",
-    "password": "0987",
+    "id": 5,
+    "name": "ramla",
+    "email": "affan.com",
+    "password": "7890",
     "role": "user",
     "borrowedBooks": []
   },
   {
-    "id": 4,
-    "name": "ramla",
-    "email": "affan.com",
-    "password": "7890",
+    "id": 6,
+    "name": "affan",
+    "email": "affan@gmail.com",
+    "password": "7654",
     "role": "user",
     "borrowedBooks": []
   }

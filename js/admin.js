@@ -38,7 +38,7 @@ function updateBook(bookId, newTitle, newAuthor) {
   books[bookIndex].author = newAuthor || books[bookIndex].author;
 
   writeBooks(books);
-  console.log(`✅ Book updated successfully!`);
+  console.log(`✅ ${books[bookIndex].title} Book updated successfully!`);
 }
 
 // list all books
@@ -46,7 +46,9 @@ function watchBooks() {
   let books = readBooks();
   console.log("\n📖 Registered Books");
   books.forEach((book) =>
-    console.log(`${book.id}. ${book.title}. ${book.author} ${book.borrowed}`)
+    console.log(
+      `${book.id}. ${book.title}. ${book.author} ${book.year} ${book.borrowed}`
+    )
   );
 }
 
@@ -73,4 +75,11 @@ function deleteUser(userId) {
   console.log("✅ User deleted successfully!");
 }
 
-module.exports = { addBook, removeBook, updateBook, watchBooks, listUsers, deleteUser };
+module.exports = {
+  addBook,
+  removeBook,
+  updateBook,
+  watchBooks,
+  listUsers,
+  deleteUser,
+};
