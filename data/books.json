@@ -9,12 +9,30 @@
     "id": 2,
     "title": "Node.js Guide",
     "author": "Jane Smith",
-    "borrowed": false
+    "borrowed": true
   },
   {
     "id": 3,
     "title": "miraclous",
     "author": "mariana",
     "borrowed": true
+  },
+  {
+    "id": 4,
+    "title": "lalisa",
+    "author": "leon",
+    "borrowed": false
+  },
+  {
+    "id": 5,
+    "title": "xs",
+    "author": "elon musk",
+    "borrowed": false
+  },
+  {
+    "id": 6,
+    "title": "HTML",
+    "author": "ramla",
+    "borrowed": false
   }
 ]

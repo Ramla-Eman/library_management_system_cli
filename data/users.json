@@ -6,17 +6,5 @@
     "password": "admin123",
     "role": "admin",
     "borrowedBooks": []
-  },
-  {
-    "id": 2,
-    "name": "ramla",
-    "email": "ramla@gmail.com",
-    "password": "1256",
-    "borrowedBooks": [
-      {
-        "id": 3,
-        "title": "miraclous"
-      }
-    ]
   }
 ]

@@ -2,43 +2,70 @@ const { readBooks, writeBooks } = require("./books");
 const { readUsers, writeUsers } = require("./auth");
 
 function addBook(title, author) {
-    let books = readBooks();
-    let newBook = { id: books.length + 1, title, author, borrowed: false };
-    books.push(newBook);
-    writeBooks(books);
-    console.log(`✅ Book "${title}" added successfully!`);
+  let books = readBooks();
+  let newBook = { id: books.length + 1, title, author, borrowed: false };
+  books.push(newBook);
+  writeBooks(books);
+  console.log(`✅ Book "${title}" added successfully!`);
 }
 
 function removeBook(bookId) {
-    let books = readBooks();
-    let updatedBooks = books.filter(b => b.id !== bookId);
+  let books = readBooks();
+  let updatedBooks = books.filter((b) => b.id !== bookId);
 
-    if (books.length === updatedBooks.length) {
-        console.log("⚠️ Book not found!");
-        return;
-    }
+  if (books.length === updatedBooks.length) {
+    console.log("⚠️ Book not found!");
+    return;
+  }
 
-    writeBooks(updatedBooks);
-    console.log("✅ Book removed successfully!");
+  writeBooks(updatedBooks);
+  console.log("✅ Book removed successfully!");
+}
+
+// ✏️ Update Book
+function updateBook(bookId, newTitle, newAuthor) {
+  let books = readBooks();
+  let bookIndex = books.findIndex((b) => b.id === bookId);
+
+  if (bookIndex === -1) {
+    console.log("⚠️ Book not found!");
+    return;
+  }
+
+  books[bookIndex].title = newTitle || books[bookIndex].title;
+  books[bookIndex].author = newAuthor || books[bookIndex].author;
+
+  writeBooks(books);
+  console.log(`✅ Book updated successfully!`);
+}
+
+function watchBooks() {
+  let books = readBooks();
+  console.log("\n📖 Registered Books");
+  books.forEach((book) =>
+    console.log(`${book.id}. ${book.title}. ${book.author} ${book.borrowed}`)
+  );
 }
 
 function listUsers() {
-    let users = readUsers();
-    console.log("\n👥 Registered Users:");
-    users.forEach(user => console.log(`${user.id}. ${user.name} (${user.email}) - ${user.role}`));
+  let users = readUsers();
+  console.log("\n👥 Registered Users:");
+  users.forEach((user) =>
+    console.log(`${user.id}. ${user.name} (${user.email}) - ${user.role}`)
+  );
 }
 
 function deleteUser(userId) {
-    let users = readUsers();
-    let updatedUsers = users.filter(u => u.id !== userId);
+  let users = readUsers();
+  let updatedUsers = users.filter((u) => u.id !== userId);
 
-    if (users.length === updatedUsers.length) {
-        console.log("⚠️ User not found!");
-        return;
-    }
+  if (users.length === updatedUsers.length) {
+    console.log("⚠️ User not found!");
+    return;
+  }
 
-    writeUsers(updatedUsers);
-    console.log("✅ User deleted successfully!");
+  writeUsers(updatedUsers);
+  console.log("✅ User deleted successfully!");
 }
 
-module.exports = { addBook, removeBook, listUsers, deleteUser };
+module.exports = { addBook, removeBook, updateBook, watchBooks, listUsers, deleteUser };

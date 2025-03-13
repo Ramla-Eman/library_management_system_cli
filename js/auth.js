@@ -10,6 +10,7 @@ function writeUsers(users) {
     fs.writeFileSync(filePath, JSON.stringify(users, null, 2));
 }
 
+// 📌 Signup function
 function signup(name, email, password) {
     let users = readUsers();
 
@@ -24,4 +25,18 @@ function signup(name, email, password) {
     console.log("✅ User registered successfully!");
 }
 
-module.exports = { signup, readUsers, writeUsers };
+// 🔐 Login function
+function login(email, password) {
+    let users = readUsers();
+    let user = users.find(user => user.email === email && user.password === password);
+
+    if (!user) {
+        console.log("❌ Invalid email or password!");
+        return null;
+    }
+
+    console.log(`✅ Welcome, ${user.name}!`);
+    return user;
+}
+
+module.exports = { signup, login, readUsers, writeUsers };
