@@ -21,5 +21,13 @@
     "password": "0987",
     "role": "user",
     "borrowedBooks": []
+  },
+  {
+    "id": 4,
+    "name": "ramla",
+    "email": "affan.com",
+    "password": "7890",
+    "role": "user",
+    "borrowedBooks": []
   }
 ]
