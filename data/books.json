@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "JavaScript Mastery",
+    "author": "John Doe",
+    "borrowed": false
+  },
+  {
+    "id": 2,
+    "title": "Node.js Guide",
+    "author": "Jane Smith",
+    "borrowed": false
+  },
+  {
+    "id": 3,
+    "title": "miraclous",
+    "author": "mariana",
+    "borrowed": true
+  }
+]
