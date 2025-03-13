@@ -11,7 +11,15 @@
     "id": 2,
     "name": "ramla",
     "email": "ramla.eman.ra@gmail.com",
-    "password": "028981",
+    "password": "1234",
+    "borrowedBooks": []
+  },
+  {
+    "id": 3,
+    "name": "basit",
+    "email": "basit.com",
+    "password": "0987",
+    "role": "user",
     "borrowedBooks": []
   }
 ]

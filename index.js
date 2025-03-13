@@ -120,11 +120,20 @@ function mainMenu() {
       case "2":
         rl.question("Enter email: ", (email) => {
           rl.question("Enter password: ", (password) => {
-            let user = login(email, password);
+            let users = readUsers();
+            let user = users.find(
+              (u) =>
+                u.email === email &&
+                u.password === password &&
+                u.role === "user"
+            );
             if (user) {
-              console.log("🎉 Login Successful!");
+              console.log("✅ logged in Successfully!");
+              mainMenu();
+            } else {
+              console.log("❌ Invalid user credentials!");
+              mainMenu();
             }
-            mainMenu();
           });
         });
         break;

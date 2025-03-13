@@ -1,14 +1,16 @@
 const { readBooks, writeBooks } = require("./books");
 const { readUsers, writeUsers } = require("./auth");
 
-function addBook(title, author) {
+// add book function
+function addBook(title, author, year) {
   let books = readBooks();
-  let newBook = { id: books.length + 1, title, author, borrowed: false };
+  let newBook = { id: books.length + 1, title, author, year, borrowed: false };
   books.push(newBook);
   writeBooks(books);
   console.log(`✅ Book "${title}" added successfully!`);
 }
 
+// remove book function
 function removeBook(bookId) {
   let books = readBooks();
   let updatedBooks = books.filter((b) => b.id !== bookId);
@@ -22,7 +24,7 @@ function removeBook(bookId) {
   console.log("✅ Book removed successfully!");
 }
 
-// ✏️ Update Book
+// update book
 function updateBook(bookId, newTitle, newAuthor) {
   let books = readBooks();
   let bookIndex = books.findIndex((b) => b.id === bookId);
@@ -39,6 +41,7 @@ function updateBook(bookId, newTitle, newAuthor) {
   console.log(`✅ Book updated successfully!`);
 }
 
+// list all books
 function watchBooks() {
   let books = readBooks();
   console.log("\n📖 Registered Books");
@@ -47,6 +50,7 @@ function watchBooks() {
   );
 }
 
+// list all users
 function listUsers() {
   let users = readUsers();
   console.log("\n👥 Registered Users:");
@@ -55,6 +59,7 @@ function listUsers() {
   );
 }
 
+// delate users
 function deleteUser(userId) {
   let users = readUsers();
   let updatedUsers = users.filter((u) => u.id !== userId);

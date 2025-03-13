@@ -1,6 +1,7 @@
 const { readBooks, writeBooks } = require("./books");
 const { readUsers, writeUsers } = require("./auth");
 
+// handling borrow book function
 function borrowBook(userId, bookId) {
     let users = readUsers();
     let books = readBooks();
@@ -19,6 +20,7 @@ function borrowBook(userId, bookId) {
     console.log(`✅ ${user.name} borrowed "${book.title}"`);
 }
 
+// handling return book function
 function returnBook(userId, bookId) {
     let users = readUsers();
     let books = readBooks();
@@ -36,6 +38,7 @@ function returnBook(userId, bookId) {
     console.log(`✅ ${user.name} returned "${book.title}"`);
 }
 
+// function for checking how many books that i borrowed
 function listYourBooks(userId) {
     let users = readUsers();
     let user = users.find(u => u.id === userId);
