@@ -1,7 +1,7 @@
 const readline = require("readline");
 const { signup, login, readUsers } = require("./js/auth");
 const { listBooks } = require("./js/books");
-const { borrowBook, returnBook } = require("./js/user");
+const { borrowBook, returnBook, listYourBooks } = require("./js/user");
 const {
   addBook,
   removeBook,
@@ -99,10 +99,11 @@ function mainMenu() {
   console.log("1. Sign Up");
   console.log("2. Log In");
   console.log("3. List Books");
-  console.log("4. Borrow Book");
-  console.log("5. Return Book");
-  console.log("6. Admin Panel");
-  console.log("7. Exit");
+  console.log("4. List Your Books");
+  console.log("5. Borrow Book");
+  console.log("6. Return Book");
+  console.log("7. Admin Panel");
+  console.log("8. Exit");
 
   rl.question("Select an option: ", (option) => {
     switch (option) {
@@ -133,13 +134,19 @@ function mainMenu() {
         break;
       case "4":
         rl.question("Enter your user ID: ", (userId) => {
+          listYourBooks(parseInt(userId));
+          mainMenu();
+        });
+        break;
+      case "5":
+        rl.question("Enter your user ID: ", (userId) => {
           rl.question("Enter book ID to borrow: ", (bookId) => {
             borrowBook(parseInt(userId), parseInt(bookId));
             mainMenu();
           });
         });
         break;
-      case "5":
+      case "6":
         rl.question("Enter your user ID: ", (userId) => {
           rl.question("Enter book ID to return: ", (bookId) => {
             returnBook(parseInt(userId), parseInt(bookId));
@@ -147,7 +154,7 @@ function mainMenu() {
           });
         });
         break;
-      case "6":
+      case "7":
         rl.question("Enter Admin Email: ", (email) => {
           rl.question("Enter Admin Password: ", (password) => {
             let users = readUsers();
@@ -167,7 +174,7 @@ function mainMenu() {
           });
         });
         break;
-      case "7":
+      case "8":
         console.log("📌 Exiting the system.");
         rl.close();
         break;

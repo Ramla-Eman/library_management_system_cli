@@ -36,4 +36,18 @@ function returnBook(userId, bookId) {
     console.log(`✅ ${user.name} returned "${book.title}"`);
 }
 
-module.exports = { borrowBook, returnBook };
+function listYourBooks(userId) {
+    let users = readUsers();
+    let user = users.find(u => u.id === userId);
+
+    if (!user) return console.log("⚠️ User not found!");
+
+    console.log(`\n📚 ${user.name}'s Borrowed Books:`);
+    if (user.borrowedBooks.length === 0) {
+        console.log("📌 No books borrowed yet.");
+    } else {
+        user.borrowedBooks.forEach(book => console.log(`- ${book.title} (ID: ${book.id})`));
+    }
+}
+
+module.exports = { borrowBook, returnBook, listYourBooks };
