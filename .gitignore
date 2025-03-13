@@ -1,1 +1,13 @@
-data/
+# Node modules (installed packages)
+node_modules/
+
+# Logs
+logs/
+*.log
+
+# Environment variables
+.env
+
+# Data files
+data/users.json
+data/books.json
