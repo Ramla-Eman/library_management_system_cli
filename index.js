@@ -50,7 +50,7 @@ function startupMenu() {
               console.log(`✅ ${user.name} logged in Successfully!`);
               mainMenu();
             } else {
-              console.log("❌ Invalid user email $ password!");
+              console.log("❌ Invalid user email & password!");
               startupMenu();
             }
           });
@@ -70,7 +70,7 @@ function startupMenu() {
               console.log(`✅ Admin ${admin.name} logged in!`);
               adminMenu();
             } else {
-              console.log("❌ Invalid admin email 7 password");
+              console.log("❌ Invalid admin email & password");
               startupMenu();
             }
           });
@@ -203,7 +203,7 @@ function mainMenu() {
         });
         break;
       case "5":
-        console.log("Exiting from user panel.");
+        console.log("Exiting from main menu.");
         startupMenu();
         break;
       default:

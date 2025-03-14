@@ -3,7 +3,7 @@
     "id": 1,
     "title": "JavaScript Mastery",
     "author": "John Doe",
-    "borrowed": false
+    "borrowed": true
   },
   {
     "id": 2,
@@ -19,27 +19,15 @@
   },
   {
     "id": 4,
-    "title": "lalisa",
-    "author": "leon",
-    "borrowed": false
+    "title": "xs",
+    "author": "elon musk",
+    "borrowed": true
   },
   {
     "id": 5,
-    "title": "xs",
-    "author": "elon musk",
-    "borrowed": false
-  },
-  {
-    "id": 6,
-    "title": "HTML",
-    "author": "ramla",
-    "borrowed": false
-  },
-  {
-    "id": 7,
-    "title": "lalisa",
-    "author": "lisa",
-    "year": "2015",
+    "title": "1984",
+    "author": "john doe",
+    "year": "1981",
     "borrowed": false
   }
 ]

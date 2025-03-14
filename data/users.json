@@ -30,5 +30,18 @@
     "password": "7654",
     "role": "user",
     "borrowedBooks": []
+  },
+  {
+    "id": 6,
+    "name": "affan",
+    "email": "affan@razykan.com",
+    "password": "123456",
+    "role": "user",
+    "borrowedBooks": [
+      {
+        "id": 1,
+        "title": "JavaScript Mastery"
+      }
+    ]
   }
 ]
